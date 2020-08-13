@@ -34,9 +34,10 @@ module ListOfIngredients
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-
-    config.assets.precompile += %w[admin/active_admin.css admin/active_admin.js]
+    config.app_generators.scaffold_controller = :scaffold_controller
     
+    config.assets.precompile += %w[admin/active_admin.css admin/active_admin.js]
+
     # Middleware for ActiveAdmin
     config.middleware.use Rack::MethodOverride
     config.middleware.use ActionDispatch::Flash
